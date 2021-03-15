@@ -50,32 +50,40 @@ function clearFields(){
     secondNumber.value = "";
 }
 
+// Calculator callback function
+function calculator (callback, num1, num2){
+    return callback(num1, num2);
+}
+
 
 //Calculate add on click
 addButton.onclick = () => {
-
-    myDisplayer(add(Number(firstNumber.value), Number(secondNumber.value)));
+    let result = calculator(add, Number(firstNumber.value), Number(secondNumber.value))
+    myDisplayer(result);
     clearFields();
 }
 
 //Calculate subtract on click
 subtractButton.onclick = () => {
 
-    myDisplayer(subtract(Number(firstNumber.value), Number(secondNumber.value)));
+    let result = calculator(subtract, Number(firstNumber.value), Number(secondNumber.value))
+    myDisplayer(result);
     clearFields();
 }
   
   //Calculate multiply on click
 multiplyButton.onclick = () => {
 
-    myDisplayer(multiply(Number(firstNumber.value), Number(secondNumber.value)));
+    let result = calculator(multiply, Number(firstNumber.value), Number(secondNumber.value))
+    myDisplayer(result);
     clearFields();
 }
 
   //Calculate divide on click
 divideButton.onclick = () => {
 
-    myDisplayer(divide(Number(firstNumber.value), Number(secondNumber.value)));
+    let result = calculator(divide, Number(firstNumber.value), Number(secondNumber.value))
+    myDisplayer(result);
     clearFields();
 }
 
